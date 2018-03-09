@@ -1,6 +1,6 @@
 ﻿const path = require('path');
 
-const config = {
+module.exports = {
     entry: {
         login: './Content/Scripts/Login.js'
     },
@@ -9,5 +9,3 @@ const config = {
         filename: '[name].js'
     }
 };
-
-module.exports = config;
