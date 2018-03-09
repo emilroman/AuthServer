@@ -7,5 +7,14 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'wwwroot', 'scripts'),
         filename: '[name].js'
+    },
+    module: {
+        rules: [
+            {
+                use: 'babel-loader',
+                test: /\.js$/,
+
+            }
+        ]
     }
 };

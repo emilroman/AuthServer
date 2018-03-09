@@ -1,4 +1,4 @@
-﻿var emil = 23;
-var moni = 24;
+﻿const sum = (a, b) => a + b;
 
-console.log(emil + moni);
+var result = sum(10, 5);
+console.log(result);
