@@ -22,7 +22,7 @@ namespace AuthServer
             }
 
             app.UseStaticFiles();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
