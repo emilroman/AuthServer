@@ -1,4 +1,5 @@
-﻿const path = require('path');
+/// <binding BeforeBuild='Run - Production' />
+const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
