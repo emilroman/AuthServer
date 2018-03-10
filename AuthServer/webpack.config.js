@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         vendor: ['bootstrap', 'jquery', './Content/Styles/Vendor.scss'],
-        login: ['./Content/Scripts/Logon.js', './Content/Styles/Logon.scss']
+        app: ['./Content/Scripts/main.js', './Content/Styles/app.scss']
     },
     output: {
         path: path.resolve(__dirname, 'wwwroot', 'scripts'),
