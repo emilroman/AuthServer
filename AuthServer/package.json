@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf wwwroot", 
     "build": "webpack"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^4.7.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.7",
     "webpack": "^3.5.6",
     "webpack-cli": "^2.0.10"
