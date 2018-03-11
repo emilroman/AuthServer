@@ -4,8 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        vendor: ['bootstrap', 'jquery', './Content/Styles/Vendor.scss'],
-        app: ['./Content/Scripts/main.js', './Content/Styles/app.scss']
+        vendor: ['bootstrap', 'jquery', 'knockout', './Content/Styles/Vendor.scss'],
+        app: ['./Content/Scripts/main.ts', './Content/Styles/app.scss']
     },
     output: {
         path: path.resolve(__dirname, 'wwwroot', 'scripts'),
@@ -16,6 +16,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader'
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             },
             {
                 test: /\.(sass|scss)$/,
@@ -34,6 +39,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
         new ExtractTextPlugin({
