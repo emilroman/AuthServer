@@ -1,5 +1,6 @@
 /// <binding BeforeBuild='Run - Development' />
 const path = require('path');
+var webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -44,6 +45,9 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor'
+        }),
         new ExtractTextPlugin({
             filename: '../styles/[name].bundle.css'
         })
