@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Content\Scripts\Logon\" />
+    <Folder Include="Models\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
