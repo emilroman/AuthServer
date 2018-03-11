@@ -2,7 +2,7 @@
 
 namespace AuthServer.Controllers
 {
-    public class Logon : Controller
+    public class LogonController : Controller
     {
         public IActionResult Index()
         {
