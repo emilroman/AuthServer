@@ -1,0 +1,33 @@
+﻿@model AuthServer.Models.RegisterAccount.RegisterAccountViewModel
+
+<main class="flex flex-columns flex-centered">
+    <div class="container container-white container-shadow">
+        <div class="text-center">
+            <h1 class="text-center comic-font">Create an account</h1>
+            <h6>(or <a href="@Url.Action("Index", "Logon")">Log in</a>)</h6>
+        </div>
+        <div>
+            @using (Html.BeginForm("Index"))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, "Email")
+                    @Html.TextBoxFor(m => m.Email, new { type = "email", id = "email", @class = "form-control", placeholder = "Your email" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, "Password")
+                    @Html.TextBoxFor(m => m.Password, new { type = "password", id = "password", @class = "form-control", placeholder = "Password" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, "Confirm Password")
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { type = "password", id = "confirm-password", @class = "form-control", placeholder = "Confirm Password" })
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                <hr />
+                <p>
+                    By clicking Create Account, you indicate that you agree to the <a href="#">Terms & Condition</a>
+                </p>
+            }
+        </div>
+    </div>
+</main>
