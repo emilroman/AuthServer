@@ -1,7 +1,7 @@
 ﻿@model AuthServer.Models.RegisterAccount.RegisterAccountViewModel
 
 <main class="flex flex-columns flex-centered">
-    <div class="container container-white container-shadow">
+    <div id="register-account" class="container container-white container-shadow">
         <div class="text-center">
             <h1 class="text-center comic-font">Create an account</h1>
             <h6>(or <a href="@Url.Action("Index", "Logon")">Log in</a>)</h6>
@@ -11,19 +11,19 @@
             {
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, "Email")
-                    @Html.TextBoxFor(m => m.Email, new { type = "email", id = "email", @class = "form-control", placeholder = "Your email" })
+                    @Html.TextBoxFor(m => m.Email, new {type = "email", name = nameof(Model.Email), @class = "form-control", placeholder = "Your email", data_bind = "value: email"})
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password, "Password")
-                    @Html.TextBoxFor(m => m.Password, new { type = "password", id = "password", @class = "form-control", placeholder = "Password" })
+                    @Html.TextBoxFor(m => m.Password, new {type = "password", name = nameof(Model.Password), @class = "form-control", placeholder = "Password", data_bind = "value: password"})
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.ConfirmPassword, "Confirm Password")
-                    @Html.TextBoxFor(m => m.ConfirmPassword, new { type = "password", id = "confirm-password", @class = "form-control", placeholder = "Confirm Password" })
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new {type = "password", name = nameof(Model.ConfirmPassword), @class = "form-control", placeholder = "Confirm Password", data_bind = "value: confirmPassword"})
                 </div>
-                <br />
-                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
-                <hr />
+                <br/>
+                <button type="submit" class="btn btn-primary btn-block" data-bind="enable: formIsValid">Create Account</button>
+                <hr/>
                 <p>
                     By clicking Create Account, you indicate that you agree to the <a href="#">Terms & Condition</a>
                 </p>

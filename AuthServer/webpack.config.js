@@ -1,11 +1,11 @@
 /// <binding BeforeBuild='Run - Development' />
 const path = require('path');
-var webpack = require('webpack');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        vendor: ['bootstrap', 'jquery', 'knockout', './Content/Styles/Vendor.scss'],
+        vendor: ['jquery', 'bootstrap', 'knockout', './Content/Styles/Vendor.scss'],
         app: ['./Content/Scripts/main.ts', './Content/Styles/app.scss']
     },
     output: {
@@ -29,15 +29,13 @@ module.exports = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
-                use: [
-                    {
+                use: [{
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
                             outputPath: '../styles/fonts/'
                         }
-                    }
-                ]
+                    }]
             }
         ]
     },
