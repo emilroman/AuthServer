@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="text-center text-white comic-font">Minterest</h1>
     </div>
-    <div class="container  container-white container-shadow">
+    <div class="container container-white container-shadow">
         @using (Html.BeginForm("Index"))
         {
             <div class="form-group">
@@ -26,6 +26,6 @@
         }
     </div>
     <div class="container text-center">
-        Don't have an account yet? &nbsp <a href="#">Sign up</a>
+        Don't have an account yet? &nbsp <a href="@Url.Action("Index","RegisterAccount")">Sign up</a>
     </div>
 </main>
