@@ -20,12 +20,24 @@ module.exports = {
             {
                 test: /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: '../styles/fonts/'
+                        }
+                    }
+                ]
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: '../Styles/[name].bundle.css'
+            filename: '../styles/[name].bundle.css'
         })
     ]
 };

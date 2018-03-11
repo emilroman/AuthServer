@@ -1,9 +1,31 @@
-﻿@section content { 
-    <script src="~/scripts/login.bundle.js"></script>
-    <link href="~/Styles/login.bundle.css" rel="stylesheet" />
-}
-
-<div class="container-fluid height-100">
-    <div class="height-50" style="background-color:  greenyellow"></div>
-    <div class="height-50"></div>
-</div>
+﻿<main class="flex flex-columns flex-centered">
+    <div class="container">
+        <h1 class="text-center text-white comic-font">Minterest</h1>
+    </div>
+    <div class="container  container-white container-shadow">
+        @using (Html.BeginForm("Index"))
+        {
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" class="form-control" placeholder="Your email" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Your password" />
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="remember-me" />
+                <label class="form-check-label" for="remember-me">Keep me signed in</label>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <br />
+            <div class="text-center">
+                <a href="#">Forgot your password?</a>
+            </div>
+        }
+    </div>
+    <div class="container text-center">
+        Don't have an account yet? &nbsp <a href="#">Sign up</a>
+    </div>
+</main>

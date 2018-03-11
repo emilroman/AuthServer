@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Content\Styles\Vendor.scss" />
+    <Content Include="Content\Styles\vendor.scss" />
   </ItemGroup>
 
   <ItemGroup>
