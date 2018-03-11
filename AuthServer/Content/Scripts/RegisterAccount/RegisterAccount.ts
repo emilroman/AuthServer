@@ -1,8 +1,5 @@
-﻿export class RegisterAccount {
-    public emil: number = 23;
-    public moni: number = 24;
+﻿import * as ko from "knockout";
 
-    public log(): void {
-        console.log(this.emil + this.moni);
-    }
+export class RegisterAccount {
+    public email: KnockoutObservable<string>;
 }
