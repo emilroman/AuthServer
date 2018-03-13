@@ -4,19 +4,23 @@ export class RegisterAccount {
     public email: KnockoutObservable<string>;
     public password: KnockoutObservable<string>;
     public confirmPassword: KnockoutObservable<string>;
-    private passwordConfirmationMatches: any;
-    public formIsValid: any;
 
     constructor() {
         this.email = ko.observable("");
         this.password = ko.observable("");
         this.confirmPassword = ko.observable("");
-        this.passwordConfirmationMatches = ko.computed(() => {
-            return this.password().length > 0 && this.password() === this.confirmPassword();
-        });
-        this.formIsValid = ko.computed(() => {
-            //TODO: add validation here to enable form button
-            return this.passwordConfirmationMatches();
-        });
     }
+
+    public emailIsValid = ko.pureComputed(() => {
+        return this.email().length > 0;
+    });
+
+    public passwordsMatch = ko.pureComputed(() => {
+        return this.password() === this.confirmPassword();
+    });
+
+    public formIsValid = ko.pureComputed(() => {
+        //TODO: add validation here to enable form button
+        return this.password().length > 0 && this.passwordsMatch();
+    });
 }
