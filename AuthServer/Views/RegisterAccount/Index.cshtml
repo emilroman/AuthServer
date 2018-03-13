@@ -1,7 +1,7 @@
 ﻿@model AuthServer.Models.RegisterAccount.RegisterAccountViewModel
 
 <main class="flex flex-columns flex-centered">
-    <div id="register-account" class="container container-white container-shadow">
+    <div id="register-account-container" class="container container-white container-shadow">
         <div class="text-center">
             <h1 class="text-center comic-font">Create an account</h1>
             <h6>(or <a href="@Url.Action("Index", "Logon")">Log in</a>)</h6>
@@ -31,3 +31,9 @@
         </div>
     </div>
 </main>
+
+<script type="text/javascript">
+    var container = $("#register-account-container")[0];
+    var viewModel = new window.ViewModels.RegisterAccount();
+    ko.applyBindings(viewModel, container);
+</script>

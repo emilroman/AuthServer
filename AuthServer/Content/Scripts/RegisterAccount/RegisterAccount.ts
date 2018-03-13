@@ -1,5 +1,4 @@
 ﻿import * as ko from "knockout";
-import * as $ from "jquery";
 
 export class RegisterAccount {
     public email: KnockoutObservable<string>;
@@ -21,7 +20,3 @@ export class RegisterAccount {
         });
     }
 }
-
-$(() => {
-    ko.applyBindings(new RegisterAccount(), $("#register-account")[0]);
-});

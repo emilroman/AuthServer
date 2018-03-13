@@ -36,6 +36,20 @@ module.exports = {
                             outputPath: '../styles/fonts/'
                         }
                     }]
+            },
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
+            },
+            {
+                test: require.resolve('knockout'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: 'ko'
+                }]
             }
         ]
     },
